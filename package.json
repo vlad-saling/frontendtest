@@ -3,6 +3,10 @@
   "description": "FrontEnd Programming Challenge for Chess.com",
   "license": "MIT",
   "version": "1.0.0",
+  "engines": {
+    "node": "18.15.x",
+    "npm": "8.19.x"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
