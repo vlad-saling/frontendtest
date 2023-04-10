@@ -4,7 +4,7 @@ export const useLogStore = defineStore('log', {
     state: () => ({ logEntries: [] }),
     getters: {
         getLog() {
-            return this.log
+            return this.logEntries
         }
     },
     actions: {

@@ -26,7 +26,7 @@ import Log from './components/Log.vue'
     height: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 68px 1fr 1fr 56px;
+    grid-template-rows: var(--header-height) minmax(min-content, max-content) minmax(min-content, auto) var(--footer-height);
     grid-template-areas:
         'header'
         'main'
@@ -37,7 +37,7 @@ import Log from './components/Log.vue'
 @media (min-width: 768px) {
     .page {
         grid-template-columns: 1fr 20rem;
-        grid-template-rows: 68px auto 56px;
+        grid-template-rows: var(--header-height) calc(100vh - calc(var(--header-height) + var(--footer-height))) var(--footer-height);
         grid-template-areas:
             'header sidebar'
             'main sidebar'
@@ -58,11 +58,22 @@ import Log from './components/Log.vue'
 
 .main {
     grid-area: main;
+    padding-bottom: 2rem;
+    margin-bottom: auto;
+}
+
+@media (min-width: 768px) {
+    .main {
+        padding-bottom: 0;
+        max-width: calc(100vmin - calc(var(--header-height) + var(--footer-height)) + 3rem);
+    }
 }
 
 .sidebar {
     grid-area: sidebar;
     background-color: var(--background-color-sidebar);
+    display: flex;
+    flex-direction: column;
 }
 
 .footer {

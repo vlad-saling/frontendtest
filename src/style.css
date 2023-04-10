@@ -15,6 +15,18 @@
   --background-color-sidebar: #272522;
 
   --accent-color: #7fa650;
+
+  --light-tile-color: #ebebd0;
+  --dark-tile-color: var(--accent-color);
+
+  --header-height: 68px;
+  --footer-height: 56px;
+
+  --border-color: #000000;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
