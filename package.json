@@ -13,10 +13,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "pinia": "^2.0.34",
     "vue": "^3.2.47"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",
+    "cypress": "^12.9.0",
     "vite": "^4.2.0"
   }
 }
