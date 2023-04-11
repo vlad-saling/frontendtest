@@ -11,11 +11,11 @@
 
 Warning: Make sure you have the dev server running before running the Cypress tests
 
-Run `npm run cypress:run` to run the Cypress tests in the terminal
+Run `npx cypress run` to run the Cypress tests in the terminal
 
 or
 
-Run `npm run cypress:open` to open the Cypress test runner
+Run `npx cypress open` to open the Cypress test runner
 
 ### Notes
 
