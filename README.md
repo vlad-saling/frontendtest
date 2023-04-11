@@ -9,6 +9,8 @@
 
 ### Cypress
 
+Warning: Make sure you have the dev server running before running the Cypress tests
+
 Run `npm run cypress:run` to run the Cypress tests in the terminal
 
 or
