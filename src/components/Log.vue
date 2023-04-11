@@ -13,7 +13,7 @@ export default {
     <button class="resetButton" type="button" @click="logStore.$reset" data-cy="reset">Clear log</button>
     <ul class="log" data-cy="sidebar">
         <li v-for="(logEntry, index) in logStore.logEntries" :key="logEntry.id">
-            {{ index }}. {{ logEntry }}
+            {{ index + 1 }}. {{ logEntry }}
         </li>
     </ul>
 </template>
