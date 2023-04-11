@@ -1,10 +1,6 @@
-<script setup>
-import { useLogStore } from '../stores/logStore'
-const logStore = useLogStore()
-</script>
-
 <script>
-
+import { mapState } from 'pinia'
+import { useLogStore } from '../stores/logStore'
 export default {
     name: "ChessBoard",
     data() {
@@ -14,6 +10,9 @@ export default {
     },
     created() {
         this.generateBoard();
+    },
+    computed: {
+        ...mapState(useLogStore, ['logEntries', 'addLogEntry'])
     },
     methods: {
         generateBoard() {
@@ -30,6 +29,15 @@ export default {
             }
 
             this.tiles = tiles;
+        },
+        recordClick(tile) {
+            // make sure tile is not already in the log
+            if (!this.logEntries.includes(tile)) {
+                this.addLogEntry(tile);
+            }
+        },
+        isAlreadyActive(tile) {
+            return this.logEntries.includes(tile);
         }
     }
 }
@@ -43,10 +51,10 @@ export default {
             class="tile"
             type="button"
             :data-cy="tile"
-            @click="logStore.addLogEntry(tile)"
-            :class="{ active: logStore.getLog.includes(tile) }"
+            @click="recordClick(tile)"
+            :class="{ active: isAlreadyActive(tile) }"
         >
-            <span>{{ tile }}</span>
+            <span class="coord">{{ tile }}</span>
         </button>
     </div>
 </template>
@@ -57,12 +65,6 @@ export default {
     flex-wrap: wrap;
 }
 
-@media (min-width: 768px) {
-    .board {
-
-    }
-}
-
 .tile {
     aspect-ratio: 1;
     background-color: var(--light-tile-color);
@@ -71,16 +73,35 @@ export default {
     margin: 0;
     border: 1px solid var(--border-color);
     flex-basis: calc(100% / 8);
+    transition: all 0.2s ease-in-out;
 }
 
 .tile.active {
-    font-weight: bold;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.85) inset;
 }
 
-.tile > span {
+.tile > .coord {
+    font-size: 8px;
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #ffffd7;
+    box-shadow: -1px -1px 3px 1px rgba(0,0,0,0.25) inset;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    transition: all 0.2s ease-in-out;
+}
+
+@media (min-width: 768px) {
+    .tile > .coord {
+        font-size: 12px;
+    }
+}
+
+.tile.active > .coord {
+    box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.25);
 }
 
 .tile:nth-child(-2n+8),
@@ -93,5 +114,4 @@ export default {
 .tile:nth-child(56) ~ .tile:nth-child(-2n+63) {
     background-color: var(--dark-tile-color);
 }
-
 </style>

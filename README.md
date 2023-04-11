@@ -1,5 +1,32 @@
 # Chess.com - Front End Programming Challenge
 
+## How to use this repo
+
+1. Clone this repository or download and unpack the zip file
+2. Run `npm install` to install dependencies
+3. Run `npm run dev` to start the dev server
+4. Open [http://localhost:5173](http://localhost:5173) in your browser (if it doesn't open automatically)
+
+### Cypress
+
+Run `npm run cypress:run` to run the Cypress tests in the terminal
+
+or
+
+Run `npm run cypress:open` to open the Cypress test runner
+
+### Notes
+
+#### Vue 3 + Vite
+
+This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+
+#### Recommended IDE Setup
+
+- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+
+## Original README
+
 Welcome to the [Chess.com](https://chess.com) front end programming challenge!
 
 # Instructions
@@ -19,13 +46,3 @@ Welcome to the [Chess.com](https://chess.com) front end programming challenge!
 # Questions & Feedback
 Please contact Nick Kampa (nkampa@chess.com) with any questions or feedback regarding this challenge.
 
-
-# Notes
-
-## Vue 3 + Vite
-
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-### Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
