@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('example to-do app', () => {
+describe('Chess board click tracking', () => {
   beforeEach(() => {
     // Cypress starts out with a blank slate for each test
     cy.visit('http://localhost:5173/')
