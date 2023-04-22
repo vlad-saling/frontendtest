@@ -12,9 +12,7 @@ describe('Chess board click tracking', () => {
     cy.get('[data-cy=A1]').click()
 
     cy.get('[data-cy=sidebar]').should('contain', 'A1')
-  })
 
-  it('Chessboard reset clears log', () => {
     cy.get('[data-cy=reset]').should('be.visible' )
 
     cy.get('[data-cy=reset]').click()
